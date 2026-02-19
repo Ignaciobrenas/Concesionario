@@ -1,108 +1,45 @@
-# 🚗 Gestión de un Concesionario de Coches
+﻿# ðŸš— Car Dealership Management Simulation (Java OOP Core)
 
-Proyecto Java para la **Prueba Evaluativa RA7** del módulo de Programación Orientada a Objetos.
-Simula la gestión de empleados de un concesionario de coches mediante herencia, clases abstractas e interfaces.
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/OOP-Inheritance_%26_Abstract_Classes-007396?style=for-the-badge" alt="OOP" />
+  <img src="https://img.shields.io/badge/Academic-1Âº_DAW_STUCOM-10B981?style=for-the-badge" alt="STUCOM" />
+</p>
 
----
-
-## 📁 Estructura del proyecto
-
-```
-ConcesionarioCoches/
-├── Controller/
-│   └── Main.java
-└── Model/
-    ├── Trabajo.java       (interfaz)
-    ├── Empleado.java      (clase abstracta)
-    ├── Vendedor.java
-    ├── Mecanico.java
-    ├── Gerente.java
-    └── Concesionario.java
-```
+> ðŸŽ“ **Academic Project Notice:** Evaluative assignment for the **1st year of Web Application Development (DAW)** at **STUCOM Pelai** (Barcelona) covering Object-Oriented Programming (MP0485 RA7).
 
 ---
 
-## 🧱 Diagrama de clases (simplificado)
+## ðŸ“Œ Overview / DescripciÃ³n General
 
-```
-<<interface>>
-   Trabajo
-  +trabajar()
-  +calcularSueldo()
-       ▲
-       |
-  Empleado (abstract)
-  - nombre
-  - sueldoBase: 1200€
-  - horasTrabajo: 8
-       ▲
-  _____|______
- |     |      |
-Vendedor  Mecanico  Gerente
-```
+### ðŸ‡¬ðŸ‡§ English
+An object-oriented simulation of a car dealership's internal operations developed in **Java**. It models employee specialties (Managers, Mechanics, Sales representatives), maintenance job work orders, commissions, and vehicle sales workflows.
+
+### ðŸ‡ªðŸ‡¸ EspaÃ±ol
+SimulaciÃ³n orientada a objetos de la operativa de un concesionario de vehÃ­culos desarrollada en **Java**. Modela los diferentes roles de la plantilla (Gerentes, MecÃ¡nicos, Vendedores), la asignaciÃ³n de Ã³rdenes de trabajo (Trabajo), comisiones y flujos de venta de vehÃ­culos.
 
 ---
 
-## 👥 Tipos de empleados
+## ðŸ›ï¸ Roles & Architecture
 
-### 🚗 Vendedor
-- Sueldo base: **1200 €**
-- Atributos extra: `comisionPorVenta` (50 €) y `ventasRealizadas`
-- Cálculo de sueldo: `sueldoBase + (ventasRealizadas * comisionPorVenta)`
-
-### 🔧 Mecánico
-- Sueldo base: **1200 €**
-- Atributos extra: `horasExtra` y `pagoHoraExtra` (15 €/hora)
-- Cálculo de sueldo: `sueldoBase + (horasExtra * pagoHoraExtra)`
-
-### 👔 Gerente
-- Sueldo base: **2000 €**
-- Atributos extra: `bonus` (500 €)
-- Cálculo de sueldo: `sueldoBase + bonus`
+- **Empleado.java (Abstract Class):** Shared employee attributes, base salary calculation, and polymorphic contract methods.
+- **Gerente.java:** Management supervision bonus and dealership branch administration.
+- **Mecanico.java:** Maintenance hours tracking, specialized repairs, and labor cost computation.
+- **Vendedor.java:** Sales incentives, commission on vehicle deals, and customer lead tracking.
+- **Trabajo.java:** Encapsulates service repair orders assigned to mechanics.
+- **Concesionario.java:** Main business entity coordinating staff, inventory, and monthly payroll summaries.
 
 ---
 
-## ▶️ Ejecución
+## ðŸš€ How to Run
 
-Al arrancar el programa se pedirá por consola:
-
-1. El **nombre del concesionario**
-2. Crear empleados indicando **tipo** (1. Vendedor, 2. Mecánico, 3. Gerente) y **nombre**
-3. Se puede añadir tantos empleados como se quiera
-4. Al terminar, se muestran todos trabajando y el resumen de sueldos
-
-### Ejemplo de salida
-
-```
-Introduce el nombre del concesionario: Concesionario AutoPlus
-
-Creación de empleados...
-Empleado 1: Tipo (1. Vendedor, 2. Mecánico, 3. Gerente)
-Nombre: Juan Pérez
-Vendedor creado correctamente.
-
-¡A trabajar!
-🚗 Vendedor Juan Pérez → El vendedor está atendiendo a clientes y mostrando los coches.
-🔧 Mecánico 1 → El mecánico está revisando y reparando los coches.
-👔 Gerente 1 → El gerente está supervisando el concesionario y coordinando al equipo.
-
-💰 Resumen de sueldos:
-Vendedores: XXXX €
-Mecánicos: YYYY €
-Gerentes: ZZZZ €
-Total de sueldos: XXXXX €
-```
+`ash
+mvn clean compile
+mvn exec:java -Dexec.mainClass="com.mycompany.concesionario.Main"
+`
 
 ---
 
-## 🛠️ Tecnologías
+## ðŸ“„ License
 
-- **Java** (JDK 17+)
-- **NetBeans IDE**
-- POO: herencia, abstracción, interfaces, polimorfismo
-
----
-
-## 👤 Autor
-
-**ignac** — Prueba Evaluativa RA7 · Departamento de Informática
+Distributed under the **MIT License**.
